@@ -1,0 +1,64 @@
+{
+  "tests": [
+    {
+      "name": "Question 1 - Custom HashMap",
+      "setup": "",
+      "run": "(cd java && javac *.java && java Question1_MyHashMap) || (cd python && python question1_my_hash_map.py) || (cd cpp && g++ -std=c++17 -O2 -o q1 question1_my_hash_map.cpp && ./q1)",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 120,
+      "points": 10
+    },
+    {
+      "name": "Question 2 - Custom Linked List",
+      "setup": "",
+      "run": "(cd java && javac *.java && java Question2_LinkedList) || (cd python && python question2_linked_list.py) || (cd cpp && g++ -std=c++17 -O2 -o q2 question2_linked_list.cpp && ./q2)",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 120,
+      "points": 10
+    },
+    {
+      "name": "Question 3 - Fibonacci",
+      "setup": "",
+      "run": "(cd java && javac *.java && java Question3_Fibonacci) || (cd python && python question3_fibonacci.py) || (cd cpp && g++ -std=c++17 -O2 -o q3 question3_fibonacci.cpp && ./q3)",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 120,
+      "points": 10
+    },
+    {
+      "name": "Question 4 - Factorial",
+      "setup": "",
+      "run": "(cd java && javac *.java && java Question4_Factorial) || (cd python && python question4_factorial.py) || (cd cpp && g++ -std=c++17 -O2 -o q4 question4_factorial.cpp && ./q4)",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 120,
+      "points": 10
+    },
+    {
+      "name": "Question 5 - Climbing Stairs",
+      "setup": "",
+      "run": "(cd java && javac *.java && java Question5_ClimbStairs) || (cd python && python question5_climb_stairs.py) || (cd cpp && g++ -std=c++17 -O2 -o q5 question5_climb_stairs.cpp && ./q5)",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 120,
+      "points": 10
+    },
+    {
+      "name": "Question 6 - Coin Combination Amounts",
+      "setup": "",
+      "run": "(cd java && javac *.java && java Question6_CoinAmounts) || (cd python && python question6_coin_amounts.py) || (cd cpp && g++ -std=c++17 -O2 -o q6 question6_coin_amounts.cpp && ./q6)",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 120,
+      "points": 10
+    }
+  ]
+}

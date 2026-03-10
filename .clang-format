@@ -1,0 +1,49 @@
+# clang-format configuration for C++ files
+# Auto-detected by VS Code (C++ extension), Visual Studio, and CLion.
+# Run manually: clang-format -i *.cpp *.h
+#
+# Based on LLVM style with adjustments matching this project's conventions.
+
+BasedOnStyle: LLVM
+
+# Indentation
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+ContinuationIndentWidth: 8
+NamespaceIndentation: None
+IndentCaseLabels: false
+
+# Braces -- always use braces, Attach style (opening brace on same line)
+BreakBeforeBraces: Attach
+InsertBraces: true
+
+# Line length
+ColumnLimit: 120
+
+# Spaces
+SpaceBeforeParens: ControlStatements
+SpaceAfterCStyleCast: false
+SpacesInParentheses: false
+SpaceBeforeAssignmentOperators: true
+
+# Alignment
+AlignConsecutiveAssignments: false
+AlignConsecutiveDeclarations: false
+AlignTrailingComments: true
+
+# Includes
+SortIncludes: false
+IncludeBlocks: Preserve
+
+# Short statements -- never allow single-line if/for/while
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+AllowShortBlocksOnASingleLine: Never
+AllowShortFunctionsOnASingleLine: Inline
+AllowShortCaseLabelsOnASingleLine: false
+
+# Other
+PointerAlignment: Left
+DerivePointerAlignment: false
+Standard: c++17

@@ -1,0 +1,38 @@
+# ── Build artifacts ───────────────────────────────────────
+*.class
+*.o
+*.obj
+*.exe
+*.out
+
+# ── Java ─────────────────────────────────────────────────
+*.jar
+*.war
+
+# ── Python ───────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+
+# ── C++ ──────────────────────────────────────────────────
+*.pdb
+*.ilk
+*.exp
+*.lib
+build/
+CMakeCache.txt
+CMakeFiles/
+
+# ── IDE / Editor ─────────────────────────────────────────
+.vscode/*
+!.vscode/extensions.json
+.vs/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ── Solutions (instructor only, never committed) ─────────
+solutions/

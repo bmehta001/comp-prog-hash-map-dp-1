@@ -1,0 +1,19 @@
+{
+  "name": "Competitive Programming - Array Questions",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "ms-python.python",
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools",
+        "editorconfig.editorconfig"
+      ],
+      "settings": {
+        "editor.formatOnSave": false,
+        "java.configuration.detectJdksAtStart": true
+      }
+    }
+  }
+}

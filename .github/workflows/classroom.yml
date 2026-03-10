@@ -1,0 +1,96 @@
+name: Autograding Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  checks: write
+  actions: read
+  contents: read
+
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Question 1 - Custom HashMap
+        id: question1
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: "Question 1 - Custom HashMap"
+          command: "(cd java && javac *.java && java Question1_MyHashMap) || (cd python && python question1_my_hash_map.py) || (cd cpp && g++ -std=c++17 -O2 -o q1 question1_my_hash_map.cpp && ./q1)"
+          timeout: 120
+          max-score: 10
+
+      - name: Question 2 - Custom Linked List
+        id: question2
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: "Question 2 - Custom Linked List"
+          command: "(cd java && javac *.java && java Question2_LinkedList) || (cd python && python question2_linked_list.py) || (cd cpp && g++ -std=c++17 -O2 -o q2 question2_linked_list.cpp && ./q2)"
+          timeout: 120
+          max-score: 10
+
+      - name: Question 3 - Fibonacci
+        id: question3
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: "Question 3 - Fibonacci"
+          command: "(cd java && javac *.java && java Question3_Fibonacci) || (cd python && python question3_fibonacci.py) || (cd cpp && g++ -std=c++17 -O2 -o q3 question3_fibonacci.cpp && ./q3)"
+          timeout: 120
+          max-score: 10
+
+      - name: Question 4 - Factorial
+        id: question4
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: "Question 4 - Factorial"
+          command: "(cd java && javac *.java && java Question4_Factorial) || (cd python && python question4_factorial.py) || (cd cpp && g++ -std=c++17 -O2 -o q4 question4_factorial.cpp && ./q4)"
+          timeout: 120
+          max-score: 10
+
+      - name: Question 5 - Climbing Stairs
+        id: question5
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: "Question 5 - Climbing Stairs"
+          command: "(cd java && javac *.java && java Question5_ClimbStairs) || (cd python && python question5_climb_stairs.py) || (cd cpp && g++ -std=c++17 -O2 -o q5 question5_climb_stairs.cpp && ./q5)"
+          timeout: 120
+          max-score: 10
+
+      - name: Question 6 - Coin Combination Amounts
+        id: question6
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: "Question 6 - Coin Combination Amounts"
+          command: "(cd java && javac *.java && java Question6_CoinAmounts) || (cd python && python question6_coin_amounts.py) || (cd cpp && g++ -std=c++17 -O2 -o q6 question6_coin_amounts.cpp && ./q6)"
+          timeout: 120
+          max-score: 10
+
+      - name: Autograding Reporter
+        uses: classroom-resources/autograding-grading-reporter@v1
+        env:
+          QUESTION1_RESULTS: "${{steps.question1.outputs.result}}"
+          QUESTION2_RESULTS: "${{steps.question2.outputs.result}}"
+          QUESTION3_RESULTS: "${{steps.question3.outputs.result}}"
+          QUESTION4_RESULTS: "${{steps.question4.outputs.result}}"
+          QUESTION5_RESULTS: "${{steps.question5.outputs.result}}"
+          QUESTION6_RESULTS: "${{steps.question6.outputs.result}}"
+        with:
+          runners: question1,question2,question3,question4,question5,question6
